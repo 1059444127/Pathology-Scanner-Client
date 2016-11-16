@@ -91,10 +91,5 @@ namespace FirstGuiClient
         {
             return Read(Key, Section).Length > 0;
         }
-
-
-
-
-
     }
 }
