@@ -1,0 +1,185 @@
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\FirstGuiClient.exe.config
+F:\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\FirstGuiClient.exe
+F:\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\FirstGuiClient.pdb
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\cublas32_55.dll
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\cudart32_55.dll
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\cufft32_55.dll
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\cvextern.dll
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\nppc32_55.dll
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\nppi32_55.dll
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\npps32_55.dll
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\OpenCL.dll
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_calib3d290.dll
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_contrib290.dll
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_core290.dll
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_cudev290.dll
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_features2d290.dll
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_ffmpeg290.dll
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_flann290.dll
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_gpu290.dll
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_gpuarithm290.dll
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_gpubgsegm290.dll
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_gpucodec290.dll
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_gpufeatures2d290.dll
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_gpufilters290.dll
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_gpuimgproc290.dll
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_gpulegacy290.dll
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_gpuoptflow290.dll
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_gpustereo290.dll
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_gpuwarping290.dll
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_highgui290.dll
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_imgproc290.dll
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_legacy290.dll
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_ml290.dll
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_nonfree290.dll
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_objdetect290.dll
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_ocl290.dll
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_optim290.dll
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_photo290.dll
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_softcascade290.dll
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_stitching290.dll
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_superres290.dll
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_video290.dll
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_videostab290.dll
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\FirstGuiClient.exe
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\FirstGuiClient.pdb
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\EmguCvAnotherTry.exe
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\Emgu.CV.dll
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\Emgu.Util.dll
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\EmguCvAnotherTry.pdb
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\Emgu.CV.xml
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\Emgu.Util.xml
+F:\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\ResolveAssemblyReference.cache
+F:\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\FirstGuiClient.AddMetadata.resources
+F:\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\FirstGuiClient.Form1.resources
+F:\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\FirstGuiClient.MainForm.resources
+F:\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\FirstGuiClient.NewScanInitialLoad.resources
+F:\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\FirstGuiClient.NewScanWizzardMode.resources
+F:\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\FirstGuiClient.Properties.Resources.resources
+F:\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\FirstGuiClient.SaveScanAndMetadata.resources
+F:\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\FirstGuiClient.ScanPreview.resources
+F:\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\FirstGuiClient.ScanPreviewFullScreen.resources
+F:\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\FirstGuiClient.Settings.resources
+F:\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\GenerateResource.read.1.tlog
+F:\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\FirstGuiClient.exe.config
+D:\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\FirstGuiClient.exe
+D:\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\FirstGuiClient.pdb
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\ScannerDB.sdf
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\ScannerDatabase.mdf
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\ScannerDatabase_log.ldf
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\cublas32_55.dll
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\cudart32_55.dll
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\cufft32_55.dll
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\cvextern.dll
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\nppc32_55.dll
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\nppi32_55.dll
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\npps32_55.dll
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\OpenCL.dll
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_calib3d290.dll
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_contrib290.dll
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_core290.dll
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_cudev290.dll
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_features2d290.dll
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_ffmpeg290.dll
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_flann290.dll
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_gpu290.dll
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_gpuarithm290.dll
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_gpubgsegm290.dll
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_gpucodec290.dll
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_gpufeatures2d290.dll
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_gpufilters290.dll
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_gpuimgproc290.dll
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_gpulegacy290.dll
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_gpuoptflow290.dll
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_gpustereo290.dll
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_gpuwarping290.dll
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_highgui290.dll
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_imgproc290.dll
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_legacy290.dll
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_ml290.dll
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_nonfree290.dll
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_objdetect290.dll
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_ocl290.dll
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_optim290.dll
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_photo290.dll
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_softcascade290.dll
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_stitching290.dll
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_superres290.dll
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_video290.dll
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\opencv_videostab290.dll
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\FirstGuiClient.exe
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\FirstGuiClient.pdb
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\EmguCvAnotherTry.exe
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\EntityFramework.dll
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\EntityFramework.SqlServer.dll
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\ScannerDatabase.dll
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\Emgu.CV.dll
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\Emgu.Util.dll
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\ScannerDatabase.pdb
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\EmguCvAnotherTry.pdb
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\EntityFramework.xml
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\EntityFramework.SqlServer.xml
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\Emgu.CV.xml
+D:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\Emgu.Util.xml
+D:\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\FirstGuiClient.AddMetadata.resources
+D:\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\FirstGuiClient.Form1.resources
+D:\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\FirstGuiClient.MainForm.resources
+D:\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\FirstGuiClient.NewScanInitialLoad.resources
+D:\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\FirstGuiClient.NewScanWizzardMode.resources
+D:\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\FirstGuiClient.OpenScan.resources
+D:\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\FirstGuiClient.PanoramaSettings.resources
+D:\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\FirstGuiClient.Properties.Resources.resources
+D:\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\FirstGuiClient.SaveScanAndMetadata.resources
+D:\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\FirstGuiClient.ScanPreview.resources
+D:\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\FirstGuiClient.ScanPreviewFullScreen.resources
+D:\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\FirstGuiClient.SearchResults.resources
+D:\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\FirstGuiClient.SearchScan.resources
+D:\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\FirstGuiClient.Settings.resources
+D:\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\FirstGuiClient.UserControl1.resources
+D:\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\GenerateResource.write.1.tlog
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\ScannerDB.sdf
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\ScannerDatabase.mdf
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\ScannerDatabase_log.ldf
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\EntityFramework.dll
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\EntityFramework.SqlServer.dll
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\ScannerDatabase.dll
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\ScannerDatabase.pdb
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\EntityFramework.xml
+F:\RaspberryPiScanClient\FirstGuiClient\bin\Debug\EntityFramework.SqlServer.xml
+F:\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\FirstGuiClient.OpenScan.resources
+F:\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\FirstGuiClient.PanoramaSettings.resources
+F:\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\FirstGuiClient.SearchResults.resources
+F:\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\FirstGuiClient.SearchScan.resources
+F:\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\FirstGuiClient.UserControl1.resources
+D:\FAF-101\Anul III\Private\Dropbox\Anul IV\VM Shared Folders\Programming\RaspberryPiScanClient\FirstGuiClient\bin\Debug\FirstGuiClient.exe.config
+D:\FAF-101\Anul III\Private\Dropbox\Anul IV\VM Shared Folders\Programming\RaspberryPiScanClient\FirstGuiClient\bin\Debug\FirstGuiClient.exe
+D:\FAF-101\Anul III\Private\Dropbox\Anul IV\VM Shared Folders\Programming\RaspberryPiScanClient\FirstGuiClient\bin\Debug\FirstGuiClient.pdb
+D:\FAF-101\Anul III\Private\Dropbox\Anul IV\VM Shared Folders\Programming\RaspberryPiScanClient\FirstGuiClient\bin\Debug\EntityFramework.dll
+D:\FAF-101\Anul III\Private\Dropbox\Anul IV\VM Shared Folders\Programming\RaspberryPiScanClient\FirstGuiClient\bin\Debug\EntityFramework.SqlServer.dll
+D:\FAF-101\Anul III\Private\Dropbox\Anul IV\VM Shared Folders\Programming\RaspberryPiScanClient\FirstGuiClient\bin\Debug\EntityFramework.xml
+D:\FAF-101\Anul III\Private\Dropbox\Anul IV\VM Shared Folders\Programming\RaspberryPiScanClient\FirstGuiClient\bin\Debug\EntityFramework.SqlServer.xml
+D:\FAF-101\Anul III\Private\Dropbox\Anul IV\VM Shared Folders\Programming\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\FirstGuiClient.AddMetadata.resources
+D:\FAF-101\Anul III\Private\Dropbox\Anul IV\VM Shared Folders\Programming\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\FirstGuiClient.Form1.resources
+D:\FAF-101\Anul III\Private\Dropbox\Anul IV\VM Shared Folders\Programming\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\FirstGuiClient.MainForm.resources
+D:\FAF-101\Anul III\Private\Dropbox\Anul IV\VM Shared Folders\Programming\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\FirstGuiClient.NewScanInitialLoad.resources
+D:\FAF-101\Anul III\Private\Dropbox\Anul IV\VM Shared Folders\Programming\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\FirstGuiClient.NewScanWizzardMode.resources
+D:\FAF-101\Anul III\Private\Dropbox\Anul IV\VM Shared Folders\Programming\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\FirstGuiClient.OpenScan.resources
+D:\FAF-101\Anul III\Private\Dropbox\Anul IV\VM Shared Folders\Programming\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\FirstGuiClient.PanoramaSettings.resources
+D:\FAF-101\Anul III\Private\Dropbox\Anul IV\VM Shared Folders\Programming\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\FirstGuiClient.Properties.Resources.resources
+D:\FAF-101\Anul III\Private\Dropbox\Anul IV\VM Shared Folders\Programming\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\FirstGuiClient.SaveScanAndMetadata.resources
+D:\FAF-101\Anul III\Private\Dropbox\Anul IV\VM Shared Folders\Programming\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\FirstGuiClient.ScanPreview.resources
+D:\FAF-101\Anul III\Private\Dropbox\Anul IV\VM Shared Folders\Programming\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\FirstGuiClient.ScanPreviewFullScreen.resources
+D:\FAF-101\Anul III\Private\Dropbox\Anul IV\VM Shared Folders\Programming\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\FirstGuiClient.SearchResults.resources
+D:\FAF-101\Anul III\Private\Dropbox\Anul IV\VM Shared Folders\Programming\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\FirstGuiClient.SearchScan.resources
+D:\FAF-101\Anul III\Private\Dropbox\Anul IV\VM Shared Folders\Programming\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\FirstGuiClient.Settings.resources
+D:\FAF-101\Anul III\Private\Dropbox\Anul IV\VM Shared Folders\Programming\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\FirstGuiClient.UserControl1.resources
+D:\FAF-101\Anul III\Private\Dropbox\Anul IV\VM Shared Folders\Programming\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\FirstGuiClient.csproj.GenerateResource.Cache
+D:\FAF-101\Anul III\Private\Dropbox\Anul IV\VM Shared Folders\Programming\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\FirstGuiClient.exe
+D:\FAF-101\Anul III\Private\Dropbox\Anul IV\VM Shared Folders\Programming\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\FirstGuiClient.pdb
+D:\FAF-101\Anul III\Private\Dropbox\Anul IV\VM Shared Folders\Programming\RaspberryPiScanClient\FirstGuiClient\bin\Debug\RestSharp.dll
+D:\FAF-101\Anul III\Private\Dropbox\Anul IV\VM Shared Folders\Programming\RaspberryPiScanClient\FirstGuiClient\bin\Debug\RestSharp.xml
+D:\FAF-101\Anul III\Private\Dropbox\Anul IV\VM Shared Folders\Programming\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\FirstGuiClient.csprojResolveAssemblyReference.cache
+D:\FAF-101\Anul III\Private\Dropbox\Anul IV\VM Shared Folders\Programming\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\FirstGuiClient.ScanPreviewFullScreenNew.resources
