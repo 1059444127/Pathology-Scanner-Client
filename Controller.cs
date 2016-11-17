@@ -80,20 +80,32 @@ namespace FirstGuiClient
             return Controller.Image;
         }
 
+        public static Image GetPreview()
+        {
+            Configuration Config = new Configuration();
+
+            var client = new RestClient(string.Format("http://{0}:{1}", Config.Ip, Config.Port));
+            var request = new RestRequest("getPreview", Method.GET);
+            request.Timeout = 30000; //ms
+
+            IRestResponse response = client.Execute(request);
+
+            var xmlDoc = new XmlDocument();
+            xmlDoc.LoadXml(response.Content);
+
+            var innerContent = xmlDoc.DocumentElement.InnerText;
+
+            if (innerContent.Length < 4)
+                return null;
+
+            var responseByteArray = System.Convert.FromBase64String(innerContent);
+            Controller.Image = Image.FromStream(new MemoryStream(responseByteArray));
+
+            return Controller.Image;
+        }
+
         public static PictureBox LoadScanPreview(PictureBox pictureBox1)
         {
-            //InitializeScanPreview();
-
-            //if preview image was loaded from server
-            //if (System.IO.File.Exists("F:\\Test\\preview.jpg") == true)
-            //    ImagePath = "F:\\Test\\preview.jpg";
-            //else
-            //    ImagePath = "F:\\Test\\default.JPG";
-
-            //try
-            //{
-
-
             if (Controller.ImageName == null || Controller.Image == null)
             {
                 ImagePath = "F:\\Test\\default.JPG";
