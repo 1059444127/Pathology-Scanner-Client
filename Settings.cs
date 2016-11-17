@@ -56,12 +56,12 @@ namespace FirstGuiClient
 
         private void textBoxIp_TextChanged(object sender, EventArgs e)
         {
-            //Ip = textBox2.Text;
+            
         }
 
         private void textBoxPort_TextChanged(object sender, EventArgs e)
         {
-            //Port = textBoxPort.Text;
+
         }
 
         private void buttonOk_Click(object sender, EventArgs e)
