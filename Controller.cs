@@ -35,43 +35,21 @@ namespace FirstGuiClient
 
         public static string TakePhoto()
         {
-            Configuration Config = new Configuration();
+            var innerContent = ExecuteRequest("takePhoto");
 
-            var client = new RestClient(string.Format("http://{0}:{1}", Config.Ip, Config.Port));
-            var request = new RestRequest("takePhoto", Method.GET);
-            request.Timeout = 30000; //ms
-
-            IRestResponse response = client.Execute(request);
-
-            var xmlDoc = new XmlDocument();
-            xmlDoc.LoadXml(response.Content);
-
-            var innerContent = xmlDoc.DocumentElement.InnerText;
-
-            if (innerContent.Length < 5)
+            if (innerContent == null || innerContent.Length < 5)
                 Controller.ImageName = null;
             else
                 Controller.ImageName = innerContent;
 
-            return Controller.ImageName;
+            return innerContent;
         }
 
         public static Image GetPhoto(string fileName)
         {
-            Configuration Config = new Configuration();
+            var innerContent = ExecuteRequest("getPhoto/" + fileName);
 
-            var client = new RestClient(string.Format("http://{0}:{1}", Config.Ip, Config.Port));
-            var request = new RestRequest("getPhoto/" + fileName, Method.GET);
-            request.Timeout = 30000; //ms
-
-            IRestResponse response = client.Execute(request);
-
-            var xmlDoc = new XmlDocument();
-            xmlDoc.LoadXml(response.Content);
-            
-            var innerContent = xmlDoc.DocumentElement.InnerText;
-
-            if (innerContent.Length < 4)
+            if (innerContent == null || innerContent.Length < 4)
                 return null;
 
             var responseByteArray = System.Convert.FromBase64String(innerContent);
@@ -82,18 +60,7 @@ namespace FirstGuiClient
 
         public static Image GetPreview()
         {
-            Configuration Config = new Configuration();
-
-            var client = new RestClient(string.Format("http://{0}:{1}", Config.Ip, Config.Port));
-            var request = new RestRequest("getPreview", Method.GET);
-            request.Timeout = 30000; //ms
-
-            IRestResponse response = client.Execute(request);
-
-            var xmlDoc = new XmlDocument();
-            xmlDoc.LoadXml(response.Content);
-
-            var innerContent = xmlDoc.DocumentElement.InnerText;
+            var innerContent = ExecuteRequest("getPreview");
 
             if (innerContent.Length < 4)
                 return null;
@@ -102,6 +69,30 @@ namespace FirstGuiClient
             Controller.Image = Image.FromStream(new MemoryStream(responseByteArray));
 
             return Controller.Image;
+        }
+
+        private static string ExecuteRequest(string resource)
+        {
+            Configuration Config = new Configuration();
+
+            var client = new RestClient(string.Format("http://{0}:{1}", Config.Ip, Config.Port));
+            var request = new RestRequest(resource, Method.GET);
+            request.Timeout = 30000; //ms
+
+            IRestResponse response = client.Execute(request);
+
+            if (!response.ResponseStatus.Equals(ResponseStatus.Completed))
+            {
+                Controller.ImageName = null;
+                return null;
+            }
+
+            var xmlDoc = new XmlDocument();
+            xmlDoc.LoadXml(response.Content);
+
+            var innerContent = xmlDoc.DocumentElement.InnerText;
+
+            return innerContent;
         }
 
         public static PictureBox LoadScanPreview(PictureBox pictureBox1)
