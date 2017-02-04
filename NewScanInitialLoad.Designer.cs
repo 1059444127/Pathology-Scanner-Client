@@ -41,6 +41,7 @@
             this.labelInitialLoad.TabIndex = 1;
             this.labelInitialLoad.Text = "Loading...";
             this.labelInitialLoad.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelInitialLoad.TextChanged += new System.EventHandler(this.labelInitialLoad_TextChanged);
             this.labelInitialLoad.Click += new System.EventHandler(this.labelInitialLoad_Click);
             // 
             // NewScanInitialLoad
@@ -58,6 +59,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Scanning Image...";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.NewScanInitialLoad_Load);
             this.ResumeLayout(false);
 

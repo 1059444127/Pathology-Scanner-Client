@@ -186,6 +186,7 @@
             this.Name = "ScanPreview";
             this.ShowIcon = false;
             this.Text = "Scan Preview";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.ScanPreview_Load);
             this.groupBoxPoorImage.ResumeLayout(false);
             this.panelImage.ResumeLayout(false);

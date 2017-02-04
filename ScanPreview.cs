@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 //using PanoramaCreator;
 
@@ -12,6 +13,8 @@ namespace FirstGuiClient
 {
     public partial class ScanPreview : Form
     {
+        private bool ScanAgainThreadExecuted;
+
         #region CONTROLLER
         ////////Image image = null;
         //////String imagePath = string.Empty;
@@ -24,13 +27,15 @@ namespace FirstGuiClient
 
         public ScanPreview()
         {
-            Controller.InitializeScanPreview();
+            ScanAgainThreadExecuted = false;
+
+            //Controller.InitializeScanPreview();
 
             InitializeComponent();
             this.pictureBox1.Cursor = Cursors.Hand;
 
-            Controller.ImageName = Controller.TakePhoto();
-            Controller.GetPhoto(Controller.ImageName); //controller image name
+            //Controller.ImageName = Controller.TakePhoto();
+            //Controller.GetPhoto(Controller.ImageName); //controller image name
             pictureBox1 = Controller.LoadScanPreview(pictureBox1);
         }
 
@@ -88,15 +93,46 @@ namespace FirstGuiClient
 
         private void buttonPreviewAgain_Click(object sender, EventArgs e)
         {
-            //NewScanInitialLoad NewScanInitialLoadObj = new NewScanInitialLoad();
-            //NewScanInitialLoadObj.Show();
-            //NewScanInitialLoadObj.FalseServerCommunication();
+            Thread scanAgainThread = new Thread(new ThreadStart(ScanAgain));
+            scanAgainThread.Start();
+
+            while (!ScanAgainThreadExecuted)
+                Thread.Sleep(500);
+
+            //Controller.ImageName = Controller.TakePhoto();
+            //Controller.GetPhoto(Controller.ImageName); //controller image name
+            pictureBox1 = Controller.LoadScanPreview(pictureBox1);
+            this.Update();
+
+            ScanAgainThreadExecuted = false;
+        }
+
+        private void ScanAgain()
+        {
+            var LoadingPage = new NewScanInitialLoad();
+            LoadingPage.Show();
+
+            Controller.InitializeScanPreview();
+            LoadingPage.labelInitialLoad.Text = Controller.GetStatus();
+            LoadingPage.Update();
 
             Controller.ImageName = Controller.TakePhoto();
-            Controller.GetPhoto(Controller.ImageName); //controller image name
-            pictureBox1 = Controller.LoadScanPreview(pictureBox1);
+            LoadingPage.labelInitialLoad.Text = Controller.GetStatus();
+            LoadingPage.Update();
 
-            //this.Hide();
+            Controller.GetPhoto(Controller.ImageName);
+            LoadingPage.labelInitialLoad.Text = Controller.GetStatus();
+            LoadingPage.Update();
+
+            if (Controller.Image != null)
+                LoadingPage.labelInitialLoad.Text = "Photo Successfully Received!";
+            else
+                LoadingPage.labelInitialLoad.Text = "Some error occured!";
+
+            LoadingPage.Update();
+            Thread.Sleep(2000);
+
+            ScanAgainThreadExecuted = true;
         }
 
         private void ScanSingleImage()
@@ -185,15 +221,15 @@ namespace FirstGuiClient
         }
 
 
-        private void ScanMultipleImages()
-        {
-            NewScanInitialLoad NewScanInitialLoadObj = new NewScanInitialLoad();
-            NewScanInitialLoadObj.Show();
-            //System.Threading.Thread.Sleep(400);
-            //this.Hide();
-            NewScanInitialLoadObj.GetMultipleImages();
-            //this.Show();
-        }
+        //private void ScanMultipleImages()
+        //{
+        //    NewScanInitialLoad NewScanInitialLoadObj = new NewScanInitialLoad();
+        //    NewScanInitialLoadObj.Show();
+        //    //System.Threading.Thread.Sleep(400);
+        //    //this.Hide();
+        //    NewScanInitialLoadObj.GetMultipleImages();
+        //    //this.Show();
+        //}
 
         private void buttonCreatePanorama_Click(object sender, EventArgs e)
         {

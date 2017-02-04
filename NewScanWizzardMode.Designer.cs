@@ -70,7 +70,7 @@
             this.buttonNext.TabIndex = 7;
             this.buttonNext.Text = "Next";
             this.buttonNext.UseVisualStyleBackColor = true;
-            this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
+            //this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
             // 
             // radioButtonSingleImage
             // 

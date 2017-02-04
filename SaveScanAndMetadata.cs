@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 //using ScannerDatabase;
 
@@ -39,7 +40,19 @@ namespace FirstGuiClient
             }
             if (checkBoxDatabase.Checked == true)
             {
-                Controller.SaveMetadataToDatabase(this.Metadata);
+                var infoPage = new WritingToDbInfo();
+                infoPage.Show();
+                infoPage.Update();
+
+                if (Controller.SaveMetadataToDatabase(this.Metadata))
+                    infoPage.label1.Text += " SUCCESS!";
+                else
+                    infoPage.label1.Text += " FAIL";
+
+                infoPage.Update();
+                Thread.Sleep(2000);
+
+                infoPage.Close();
                 //ScannerDatabase.ScannerDatabase database = new ScannerDatabase.ScannerDatabase();
                 //database.AddScan(basicScanObject);
             }

@@ -12,16 +12,61 @@ namespace FirstGuiClient
 {
     public partial class NewScanInitialLoad : Form
     {
-        PiNetworkSocketsForm net = new PiNetworkSocketsForm();
+        //PiNetworkSocketsForm net = new PiNetworkSocketsForm();
         public NewScanInitialLoad()
         {
             InitializeComponent();
+            labelInitialLoad.Text = Controller.GetStatus();
+
+            //Controller.InitializeScanPreview();
+            //labelInitialLoad.Text = Controller.GetStatus();
+
+            //Controller.ImageName = Controller.TakePhoto();
+            //labelInitialLoad.Text = Controller.GetStatus();
+
+            //Controller.GetPhoto(Controller.ImageName);
+            //labelInitialLoad.Text = Controller.GetStatus();
         }
 
         private void NewScanInitialLoad_Load(object sender, EventArgs e)
         {
-            
+            //Controller.InitializeScanPreview();
+            //labelInitialLoad.Text = Controller.GetStatus();
+
+            //Controller.ImageName = Controller.TakePhoto();
+            //labelInitialLoad.Text = Controller.GetStatus();
+
+            //Controller.GetPhoto(Controller.ImageName);
+            //labelInitialLoad.Text = Controller.GetStatus();
         }
+
+        private void textBoxInitialLoad_TextChanged(object sender, EventArgs e)
+        {
+            //this.Refresh();
+            //this.labelInitialLoad.ResetText();
+            //this.labelInitialLoad.ResumeLayout();
+            //this.labelInitialLoad.Show();
+            this.labelInitialLoad.Update();
+        }
+
+        //public void FalseServerCommunication()
+        //{
+        //    ScanPreview ScanPreviewObj = new ScanPreview();
+        //    ScanPreviewObj.Show();
+
+        //    this.Close();
+        //}
+
+        private void labelInitialLoad_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelInitialLoad_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
 
         /*public void Process()
         {
@@ -100,251 +145,229 @@ namespace FirstGuiClient
             }
 
         }*/
+        //public void GetMultipleImages()
+        //{
+        //    string command = string.Empty;
+        //    string response = string.Empty;
 
-        private void textBoxInitialLoad_TextChanged(object sender, EventArgs e)
-        {
-            //this.Refresh();
-            //this.labelInitialLoad.ResetText();
-            //this.labelInitialLoad.ResumeLayout();
-            //this.labelInitialLoad.Show();
-            this.labelInitialLoad.Update();
-        }
+        //    labelInitialLoad.Text = "Connecting to scanner...";
 
-        public void FalseServerCommunication()
-        {
-            ScanPreview ScanPreviewObj = new ScanPreview();
-            ScanPreviewObj.Show();
+        //    labelInitialLoad.Update();
+        //    //MessageBox.Show("conn to scann...");
 
-            this.Close();
-        }
+        //    if (net.StartClient("192.168.1.113", 3610) == false)
+        //    {
+        //        labelInitialLoad.Text = "Failed to connect!";
+        //        labelInitialLoad.Update();
+        //        Thread.Sleep(200);
 
-        public void GetMultipleImages()
-        {
-            string command = string.Empty;
-            string response = string.Empty;
-
-            labelInitialLoad.Text = "Connecting to scanner...";
-            
-            labelInitialLoad.Update();
-            //MessageBox.Show("conn to scann...");
-
-            if (net.StartClient("192.168.1.113", 3610) == false)
-            {
-                labelInitialLoad.Text = "Failed to connect!";
-                labelInitialLoad.Update();
-                Thread.Sleep(200);
-
-                int attempts = 2;
-                while ((net.StartClient("192.168.1.104", 3610) == false) && attempts < 10)
-                {
-                    labelInitialLoad.Text = "Connecting to scanner (attempt " + attempts + ")...";
-                    labelInitialLoad.Update();
-                    attempts++;
-                }
+        //        int attempts = 2;
+        //        while ((net.StartClient("192.168.1.104", 3610) == false) && attempts < 10)
+        //        {
+        //            labelInitialLoad.Text = "Connecting to scanner (attempt " + attempts + ")...";
+        //            labelInitialLoad.Update();
+        //            attempts++;
+        //        }
 
 
-                MessageBox.Show("Could not connect to server !");
-                this.Close();
-                return;
-            }
+        //        MessageBox.Show("Could not connect to server !");
+        //        this.Close();
+        //        return;
+        //    }
 
-            labelInitialLoad.Text = "Connecting to scanner... Connected!!!";
-            labelInitialLoad.Update();
+        //    labelInitialLoad.Text = "Connecting to scanner... Connected!!!";
+        //    labelInitialLoad.Update();
 
-            if (net.SendMessage("TakePhoto") == true)
-            {
-                labelInitialLoad.Text = "Scanning image...";
-                labelInitialLoad.Update();
+        //    if (net.SendMessage("TakePhoto") == true)
+        //    {
+        //        labelInitialLoad.Text = "Scanning image...";
+        //        labelInitialLoad.Update();
 
-                int imageSize = Convert.ToInt32(net.GetMessage()); // Get the image size from the server
+        //        int imageSize = Convert.ToInt32(net.GetMessage()); // Get the image size from the server
 
-                labelInitialLoad.Text = "Scanning image... Completed!";
-                labelInitialLoad.Update();
+        //        labelInitialLoad.Text = "Scanning image... Completed!";
+        //        labelInitialLoad.Update();
 
-                byte[] image = new byte[imageSize];
+        //        byte[] image = new byte[imageSize];
 
-                int bufferSize = 30000;
+        //        int bufferSize = 30000;
 
-                net.clientSocket.ReceiveBufferSize = bufferSize;
-                byte[] buffer;
-                int remainImage = imageSize;
+        //        net.clientSocket.ReceiveBufferSize = bufferSize;
+        //        byte[] buffer;
+        //        int remainImage = imageSize;
 
-                net.SendMessage("Ready");
-                System.Threading.Thread.Sleep(40);
+        //        net.SendMessage("Ready");
+        //        System.Threading.Thread.Sleep(40);
 
-                labelInitialLoad.Text = "Downloading image...";
-                labelInitialLoad.Update();
+        //        labelInitialLoad.Text = "Downloading image...";
+        //        labelInitialLoad.Update();
 
-                int percentage = 0;
+        //        int percentage = 0;
 
-                while (remainImage > 0)
-                {
-                    net.SendMessage("Ready");
+        //        while (remainImage > 0)
+        //        {
+        //            net.SendMessage("Ready");
 
-                    percentage = 100 - ((remainImage * 100) / imageSize);
+        //            percentage = 100 - ((remainImage * 100) / imageSize);
 
-                    labelInitialLoad.Text = "Downloading image... " + percentage + "%";
-                    labelInitialLoad.Update();
+        //            labelInitialLoad.Text = "Downloading image... " + percentage + "%";
+        //            labelInitialLoad.Update();
 
-                    //System.Threading.Thread.Sleep(100); // The row must be positioned before the SendMessage() statement.
-                    buffer = net.GetData();
-                    for (int i = 0; i < bufferSize; i++)
-                    {
-                        image[imageSize - remainImage + i] = buffer[i];
-                    }
-                    remainImage -= bufferSize;
-                    if (remainImage < bufferSize)
-                    {
-                        bufferSize = remainImage;
-                        buffer = new byte[bufferSize];
-                        net.clientSocket.ReceiveBufferSize = bufferSize;
-                    }
-                }
+        //            //System.Threading.Thread.Sleep(100); // The row must be positioned before the SendMessage() statement.
+        //            buffer = net.GetData();
+        //            for (int i = 0; i < bufferSize; i++)
+        //            {
+        //                image[imageSize - remainImage + i] = buffer[i];
+        //            }
+        //            remainImage -= bufferSize;
+        //            if (remainImage < bufferSize)
+        //            {
+        //                bufferSize = remainImage;
+        //                buffer = new byte[bufferSize];
+        //                net.clientSocket.ReceiveBufferSize = bufferSize;
+        //            }
+        //        }
 
-                labelInitialLoad.Text = "Downloading image... Completed!!!";
-                labelInitialLoad.Update();
+        //        labelInitialLoad.Text = "Downloading image... Completed!!!";
+        //        labelInitialLoad.Update();
 
-                try
-                {
-                    System.IO.File.WriteAllBytes("R:\\download.jpg", image);
-                    Console.WriteLine("Photo size after copying : {0}", image.Length);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+        //        try
+        //        {
+        //            System.IO.File.WriteAllBytes("R:\\download.jpg", image);
+        //            Console.WriteLine("Photo size after copying : {0}", image.Length);
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            MessageBox.Show(ex.Message);
+        //        }
 
-                finally
-                {
-                    net.StopClient();
+        //        finally
+        //        {
+        //            net.StopClient();
 
-                    ScanPreview ScanPreviewObj = new ScanPreview();
-                    ScanPreviewObj.Show();
+        //            ScanPreview ScanPreviewObj = new ScanPreview();
+        //            ScanPreviewObj.Show();
 
-                    this.Close();
-                }
+        //            this.Close();
+        //        }
 
-            }
+        //    }
 
-        }
+        //}
 
-        public void ServerCommunication()
-        {
-            
-            //Thread.Sleep(200);
-            //ScanPreview ScanPreview = new ScanPreview();
-            //ScanPreview.Show();
-            //this.Close();
-            //this.Show();
-            string command = string.Empty;
-            string response = string.Empty;
+        //public void ServerCommunication()
+        //{
 
-            labelInitialLoad.Text = "Connecting to scanner...";
-            labelInitialLoad.Update();
-            //MessageBox.Show("conn to scann...");
+        //    //Thread.Sleep(200);
+        //    //ScanPreview ScanPreview = new ScanPreview();
+        //    //ScanPreview.Show();
+        //    //this.Close();
+        //    //this.Show();
+        //    string command = string.Empty;
+        //    string response = string.Empty;
 
-            if (net.StartClient("192.168.1.113", 3610) == false)
-            {
-                labelInitialLoad.Text = "Failed to connect!";
-                labelInitialLoad.Update();
-                Thread.Sleep(200);
+        //    labelInitialLoad.Text = "Connecting to scanner...";
+        //    labelInitialLoad.Update();
+        //    //MessageBox.Show("conn to scann...");
 
-                int attempts = 2;
-                while ((net.StartClient("192.168.1.104", 3610) == false) && attempts < 10)
-                {
-                labelInitialLoad.Text = "Connecting to scanner (attempt " + attempts + ")...";
-                labelInitialLoad.Update();
-                attempts++;
-                }
+        //    if (net.StartClient("192.168.1.113", 3610) == false)
+        //    {
+        //        labelInitialLoad.Text = "Failed to connect!";
+        //        labelInitialLoad.Update();
+        //        Thread.Sleep(200);
 
-                
-                MessageBox.Show("Could not connect to server !");
-                this.Close();
-                return;
-            }
+        //        int attempts = 2;
+        //        while ((net.StartClient("192.168.1.104", 3610) == false) && attempts < 10)
+        //        {
+        //        labelInitialLoad.Text = "Connecting to scanner (attempt " + attempts + ")...";
+        //        labelInitialLoad.Update();
+        //        attempts++;
+        //        }
 
-            labelInitialLoad.Text = "Connecting to scanner... Connected!!!";
-            labelInitialLoad.Update();
 
-            if (net.SendMessage("TakePhoto") == true)
-            {
-                labelInitialLoad.Text = "Scanning image...";
-                labelInitialLoad.Update();
+        //        MessageBox.Show("Could not connect to server !");
+        //        this.Close();
+        //        return;
+        //    }
 
-                int imageSize = Convert.ToInt32(net.GetMessage()); // Get the image size from the server
+        //    labelInitialLoad.Text = "Connecting to scanner... Connected!!!";
+        //    labelInitialLoad.Update();
 
-                labelInitialLoad.Text = "Scanning image... Completed!";
-                labelInitialLoad.Update();
+        //    if (net.SendMessage("TakePhoto") == true)
+        //    {
+        //        labelInitialLoad.Text = "Scanning image...";
+        //        labelInitialLoad.Update();
 
-                byte[] image = new byte[imageSize];
+        //        int imageSize = Convert.ToInt32(net.GetMessage()); // Get the image size from the server
 
-                int bufferSize = 30000;
+        //        labelInitialLoad.Text = "Scanning image... Completed!";
+        //        labelInitialLoad.Update();
 
-                net.clientSocket.ReceiveBufferSize = bufferSize;
-                byte[] buffer;
-                int remainImage = imageSize;
+        //        byte[] image = new byte[imageSize];
 
-                net.SendMessage("Ready");
-                System.Threading.Thread.Sleep(40);
+        //        int bufferSize = 30000;
 
-                labelInitialLoad.Text = "Downloading image...";
-                labelInitialLoad.Update();
+        //        net.clientSocket.ReceiveBufferSize = bufferSize;
+        //        byte[] buffer;
+        //        int remainImage = imageSize;
 
-                int percentage = 0;
+        //        net.SendMessage("Ready");
+        //        System.Threading.Thread.Sleep(40);
 
-                while (remainImage > 0)
-                {
-                    net.SendMessage("Ready");
+        //        labelInitialLoad.Text = "Downloading image...";
+        //        labelInitialLoad.Update();
 
-                    percentage = 100 - ((remainImage * 100) / imageSize);
+        //        int percentage = 0;
 
-                    labelInitialLoad.Text = "Downloading image... " + percentage + "%";
-                    labelInitialLoad.Update();
+        //        while (remainImage > 0)
+        //        {
+        //            net.SendMessage("Ready");
 
-                    //System.Threading.Thread.Sleep(100); // The row must be positioned before the SendMessage() statement.
-                    buffer = net.GetData();
-                    for (int i = 0; i < bufferSize; i++)
-                    {
-                        image[imageSize - remainImage + i] = buffer[i];
-                    }
-                    remainImage -= bufferSize;
-                    if (remainImage < bufferSize)
-                    {
-                        bufferSize = remainImage;
-                        buffer = new byte[bufferSize];
-                        net.clientSocket.ReceiveBufferSize = bufferSize;
-                    }
-                }
+        //            percentage = 100 - ((remainImage * 100) / imageSize);
 
-                labelInitialLoad.Text = "Downloading image... Completed!!!";
-                labelInitialLoad.Update();
+        //            labelInitialLoad.Text = "Downloading image... " + percentage + "%";
+        //            labelInitialLoad.Update();
 
-                try
-                {
-                    System.IO.File.WriteAllBytes("R:\\download.jpg", image);
-                    Console.WriteLine("Photo size after copying : {0}", image.Length);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+        //            //System.Threading.Thread.Sleep(100); // The row must be positioned before the SendMessage() statement.
+        //            buffer = net.GetData();
+        //            for (int i = 0; i < bufferSize; i++)
+        //            {
+        //                image[imageSize - remainImage + i] = buffer[i];
+        //            }
+        //            remainImage -= bufferSize;
+        //            if (remainImage < bufferSize)
+        //            {
+        //                bufferSize = remainImage;
+        //                buffer = new byte[bufferSize];
+        //                net.clientSocket.ReceiveBufferSize = bufferSize;
+        //            }
+        //        }
 
-                finally
-                {
-                    net.StopClient();
+        //        labelInitialLoad.Text = "Downloading image... Completed!!!";
+        //        labelInitialLoad.Update();
 
-                    ScanPreview ScanPreviewObj = new ScanPreview();
-                    ScanPreviewObj.Show();
+        //        try
+        //        {
+        //            System.IO.File.WriteAllBytes("R:\\download.jpg", image);
+        //            Console.WriteLine("Photo size after copying : {0}", image.Length);
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            MessageBox.Show(ex.Message);
+        //        }
 
-                    this.Close();
-                }
-                
-            }
-        }
+        //        finally
+        //        {
+        //            net.StopClient();
 
-        private void labelInitialLoad_Click(object sender, EventArgs e)
-        {
+        //            ScanPreview ScanPreviewObj = new ScanPreview();
+        //            ScanPreviewObj.Show();
 
-        }
+        //            this.Close();
+        //        }
+
+        //    }
+        //}
+
     }
 }

@@ -66,6 +66,7 @@
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "ScanPreviewFullScreenNew";
             this.Text = "Full Screen";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.ScanPreviewFullScreenNew_Load_1);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

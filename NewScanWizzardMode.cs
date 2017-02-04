@@ -28,29 +28,29 @@ namespace FirstGuiClient
             this.Close();
         }
 
-        private void buttonNext_Click(object sender, EventArgs e)
-        {
-            /*System.Threading.Thread thread = new System.Threading.Thread(this.ScanSingleImage);
-            thread.Start();
-            this.Hide(); // or close.*/
+        //private void buttonNext_Click(object sender, EventArgs e)
+        //{
+        //    /*System.Threading.Thread thread = new System.Threading.Thread(this.ScanSingleImage);
+        //    thread.Start();
+        //    this.Hide(); // or close.*/
 
-            NewScanInitialLoad NewScanInitialLoadObj = new NewScanInitialLoad();
-            NewScanInitialLoadObj.Show();
-            NewScanInitialLoadObj.FalseServerCommunication(); //TODO: replace it with real server communication
+        //    NewScanInitialLoad NewScanInitialLoadObj = new NewScanInitialLoad();
+        //    NewScanInitialLoadObj.Show();
+        //    NewScanInitialLoadObj.FalseServerCommunication(); //TODO: replace it with real server communication
             
-            this.Hide();
+        //    this.Hide();
 
-        }
+        //}
 
-        private void ScanSingleImage()
-        {
-            NewScanInitialLoad NewScanInitialLoadObj = new NewScanInitialLoad();
-            NewScanInitialLoadObj.Show();
-            //System.Threading.Thread.Sleep(400);
-            //this.Hide();
-            NewScanInitialLoadObj.ServerCommunication();
-            //this.Show();
-        }
+        //private void ScanSingleImage()
+        //{
+        //    NewScanInitialLoad NewScanInitialLoadObj = new NewScanInitialLoad();
+        //    NewScanInitialLoadObj.Show();
+        //    //System.Threading.Thread.Sleep(400);
+        //    //this.Hide();
+        //    NewScanInitialLoadObj.ServerCommunication();
+        //    //this.Show();
+        //}
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {

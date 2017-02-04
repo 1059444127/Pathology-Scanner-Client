@@ -12,18 +12,60 @@ namespace FirstGuiClient
 {
     public static class Controller
     {
+        public enum StatusEnum
+        {
+            NOT_STARTED,
+            INITIALIZING,
+            SCANNING,
+            SCAN_COMPLETE
+        }
+        
+        private static String Status;
+        //{
+            //get
+            //{
+            //    if (Status == null)
+            //        return null;
+            //    return Status;
+            //}
+            //set
+            //{
+            //    PreviousStatus = Status;
+            //    Status = value;
+            //}
+        //}
+        private static String PreviousStatus;
+
         public static String ImagePath;
         public static String ImageName;
 
         public static int HeightFactor = 0;
         public static int WidthFactor = 0;
 
-        private static Image Image;
+        public static Image Image;
         private static Size ImageSize;
         private static Bitmap Bmp;
 
+        public static void SetStatus(String value)
+        {
+            Controller.PreviousStatus = Controller.Status;
+            Controller.Status = value;
+        }
+
+        public static String GetStatus()
+        {
+            return Controller.Status;
+        }
+
+        public static bool StatusChanged()
+        {
+            return Status != PreviousStatus;
+        }
+        
         public static void InitializeScanPreview()
         {
+            Controller.SetStatus("Connecting Server...");
+            
             ImagePath = string.Empty;
             HeightFactor = 1;
             WidthFactor = 1;
@@ -35,6 +77,8 @@ namespace FirstGuiClient
 
         public static string TakePhoto()
         {
+            Controller.SetStatus("Taking Photo...");
+
             var innerContent = ExecuteRequest("takePhoto");
 
             if (innerContent == null || innerContent.Length < 5)
@@ -47,6 +91,8 @@ namespace FirstGuiClient
 
         public static Image GetPhoto(string fileName)
         {
+            Controller.SetStatus("Retrieving \"" + fileName + "\" photo...");
+
             var innerContent = ExecuteRequest("getPhoto/" + fileName);
 
             if (innerContent == null || innerContent.Length < 4)

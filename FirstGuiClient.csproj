@@ -179,6 +179,12 @@
     <Compile Include="UserControl1.Designer.cs">
       <DependentUpon>UserControl1.cs</DependentUpon>
     </Compile>
+    <Compile Include="WritingToDbInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WritingToDbInfo.Designer.cs">
+      <DependentUpon>WritingToDbInfo.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddMetadata.resx">
       <DependentUpon>AddMetadata.cs</DependentUpon>
     </EmbeddedResource>
@@ -233,6 +239,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl1.resx">
       <DependentUpon>UserControl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WritingToDbInfo.resx">
+      <DependentUpon>WritingToDbInfo.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="app_old.config" />

@@ -183,3 +183,4 @@ D:\FAF-101\Anul III\Private\Dropbox\Anul IV\VM Shared Folders\Programming\Raspbe
 D:\FAF-101\Anul III\Private\Dropbox\Anul IV\VM Shared Folders\Programming\RaspberryPiScanClient\FirstGuiClient\bin\Debug\RestSharp.xml
 D:\FAF-101\Anul III\Private\Dropbox\Anul IV\VM Shared Folders\Programming\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\FirstGuiClient.csprojResolveAssemblyReference.cache
 D:\FAF-101\Anul III\Private\Dropbox\Anul IV\VM Shared Folders\Programming\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\FirstGuiClient.ScanPreviewFullScreenNew.resources
+D:\FAF-101\Anul III\Private\Dropbox\Anul IV\VM Shared Folders\Programming\RaspberryPiScanClient\FirstGuiClient\obj\x86\Debug\FirstGuiClient.WritingToDbInfo.resources
