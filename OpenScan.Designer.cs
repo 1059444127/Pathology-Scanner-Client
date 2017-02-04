@@ -57,6 +57,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.textBoxClinicalDiagnosis = new System.Windows.Forms.TextBox();
+            this.buttonSaveToFolder = new System.Windows.Forms.Button();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -140,6 +141,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.buttonSaveToFolder);
             this.groupBox3.Controls.Add(this.button1);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.textBoxScanID);
@@ -154,7 +156,7 @@
             // 
             this.button1.Location = new System.Drawing.Point(16, 19);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(122, 55);
+            this.button1.Size = new System.Drawing.Size(122, 32);
             this.button1.TabIndex = 0;
             this.button1.Text = "Show Image";
             this.button1.UseVisualStyleBackColor = true;
@@ -356,6 +358,16 @@
             this.textBoxClinicalDiagnosis.Size = new System.Drawing.Size(596, 131);
             this.textBoxClinicalDiagnosis.TabIndex = 9;
             // 
+            // buttonSaveToFolder
+            // 
+            this.buttonSaveToFolder.Location = new System.Drawing.Point(16, 55);
+            this.buttonSaveToFolder.Name = "buttonSaveToFolder";
+            this.buttonSaveToFolder.Size = new System.Drawing.Size(122, 32);
+            this.buttonSaveToFolder.TabIndex = 11;
+            this.buttonSaveToFolder.Text = "Save to Folder";
+            this.buttonSaveToFolder.UseVisualStyleBackColor = true;
+            this.buttonSaveToFolder.Click += new System.EventHandler(this.buttonSaveToFolder_Click);
+            // 
             // OpenScan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -422,5 +434,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.TextBox textBoxClinicalDiagnosis;
+        private System.Windows.Forms.Button buttonSaveToFolder;
     }
 }

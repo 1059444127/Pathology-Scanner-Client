@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -43,6 +44,11 @@ namespace FirstGuiClient
         {
             var ScanPreviewFullScreen = new ScanPreviewFullScreenNew(metadata.Image);
             ScanPreviewFullScreen.Show();
+        }
+
+        private void buttonSaveToFolder_Click(object sender, EventArgs e)
+        {
+            Controller.SaveMetadataToFolder(this.metadata);
         }
     }
 }

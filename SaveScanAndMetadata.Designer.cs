@@ -91,20 +91,22 @@
             this.textBox1.Enabled = false;
             this.textBox1.Location = new System.Drawing.Point(83, 25);
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(172, 20);
             this.textBox1.TabIndex = 1;
             this.textBox1.Text = "R:\\Test";
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Enabled = false;
             this.checkBox1.Location = new System.Drawing.Point(9, 28);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(68, 17);
+            this.checkBox1.Size = new System.Drawing.Size(55, 17);
             this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "Archieve";
+            this.checkBox1.Text = "Folder";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // buttonCancel
             // 

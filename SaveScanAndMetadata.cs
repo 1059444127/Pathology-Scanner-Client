@@ -20,6 +20,8 @@ namespace FirstGuiClient
             //this.basicScanObject = basicScanObject;
             this.Metadata = metadata;
             InitializeComponent();
+            this.textBox1.Text = this.Metadata.ScanId.ToString();
+            this.Update();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -36,7 +38,8 @@ namespace FirstGuiClient
         {
             if (checkBox1.Checked == true)
             {
-                //save data to zip file
+                //save data to folder
+                Controller.SaveMetadataToFolder(this.Metadata);
             }
             if (checkBoxDatabase.Checked == true)
             {
@@ -62,6 +65,16 @@ namespace FirstGuiClient
 
         private void SaveScanAndMetadata_Load(object sender, EventArgs e)
         {
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

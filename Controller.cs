@@ -12,28 +12,15 @@ namespace FirstGuiClient
 {
     public static class Controller
     {
-        public enum StatusEnum
-        {
-            NOT_STARTED,
-            INITIALIZING,
-            SCANNING,
-            SCAN_COMPLETE
-        }
+        //public enum StatusEnum
+        //{
+        //    NOT_STARTED,
+        //    INITIALIZING,
+        //    SCANNING,
+        //    SCAN_COMPLETE
+        //}
         
         private static String Status;
-        //{
-            //get
-            //{
-            //    if (Status == null)
-            //        return null;
-            //    return Status;
-            //}
-            //set
-            //{
-            //    PreviousStatus = Status;
-            //    Status = value;
-            //}
-        //}
         private static String PreviousStatus;
 
         public static String ImagePath;
@@ -213,6 +200,69 @@ namespace FirstGuiClient
             //    Console.WriteLine(ex.Message);
             //    return false; //testing
             //}
+        }
+
+        public static void SaveMetadataToFolder(Metadata metadata)
+        {
+            String dirPathName = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\" + metadata.ScanId;
+            dirPathName = VersionizeDirectoryPathName(dirPathName);
+            String imagePathName = dirPathName + "\\image.jpg";
+            String textPathName = dirPathName + "\\info.txt";
+            var textContent = new StringBuilder();
+            
+            Directory.CreateDirectory(dirPathName);
+
+            Image image = Image.FromStream(new MemoryStream(metadata.Image));
+            image.Save(imagePathName);
+            
+            textContent.Append("ScanId= " + metadata.ScanId).Append(Environment.NewLine);
+            textContent.Append("Date Created= " + Controller.ConvertScanIdToPseudoTime(metadata.ScanId)).Append(Environment.NewLine);
+            textContent.Append("-------------------").Append(Environment.NewLine);
+            textContent.Append("Patient Name= " + metadata.PatientName).Append(Environment.NewLine);
+            textContent.Append("Patient Surname= " + metadata.PatientSurname).Append(Environment.NewLine);
+            textContent.Append("Patient IDNP= " + metadata.PatientIdnp).Append(Environment.NewLine);
+            textContent.Append("-------------------").Append(Environment.NewLine);
+            textContent.Append("Doctor Name= " + metadata.DoctorName).Append(Environment.NewLine);
+            textContent.Append("Doctor Surname= " + metadata.DoctorSurname).Append(Environment.NewLine);
+            textContent.Append("PhD Degree= " + metadata.DoctorDegree).Append(Environment.NewLine);
+            textContent.Append("-------------------").Append(Environment.NewLine);
+            textContent.Append("Tissue Type= " + metadata.TissueType).Append(Environment.NewLine);
+            textContent.Append("Tissue Description= " + metadata.TissueDescription).Append(Environment.NewLine);
+            textContent.Append("Clinical Diagnosis= " + metadata.ClinicalDiagnosis).Append(Environment.NewLine);
+
+            File.AppendAllText(textPathName, textContent.ToString());
+        }
+    
+        private static String VersionizeDirectoryPathName(String dirPathName)
+        {
+            if (Directory.Exists(dirPathName))
+            {
+                String version = "0";
+
+                if (dirPathName.Contains("_"))
+                    version = dirPathName.Split('_')[1];
+
+                dirPathName = dirPathName.Split('_')[0] + "_" + (int.Parse(version) + 1);
+
+                dirPathName = VersionizeDirectoryPathName(dirPathName);
+            }
+
+            return dirPathName;
+        }
+
+        private static String ConvertScanIdToPseudoTime(long scanId)
+        {
+            String scanIdStr = scanId.ToString();
+            StringBuilder pseudoTime = new StringBuilder();
+
+            pseudoTime.Append(scanIdStr.Substring(0, 2)).Append("-");
+            pseudoTime.Append(scanIdStr.Substring(2, 2)).Append("-");
+            pseudoTime.Append(scanIdStr.Substring(4, 2)).Append(" ");
+            pseudoTime.Append(scanIdStr.Substring(6, 2)).Append(":");
+            pseudoTime.Append(scanIdStr.Substring(8, 2)).Append(":");
+            pseudoTime.Append(scanIdStr.Substring(10, 2));
+
+            return pseudoTime.ToString();
         }
 
         public static List<Metadata> GetAllScansFromDatabase()
