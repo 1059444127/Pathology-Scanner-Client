@@ -43,7 +43,8 @@ namespace FirstGuiClient
             }
             if (checkBoxDatabase.Checked == true)
             {
-                var infoPage = new WritingToDbInfo();
+                //var infoPage = new WritingToDbInfo();
+                var infoPage = new InfoForm();
                 infoPage.Show();
                 infoPage.Update();
 

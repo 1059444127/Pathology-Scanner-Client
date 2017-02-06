@@ -37,6 +37,8 @@
             this.englishToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.russianToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.enableVideoStreamToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.disableVideoStreamToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -76,7 +78,9 @@
             // 
             this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.languageToolStripMenuItem,
-            this.optionsToolStripMenuItem});
+            this.optionsToolStripMenuItem,
+            this.enableVideoStreamToolStripMenuItem,
+            this.disableVideoStreamToolStripMenuItem});
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
             this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.settingsToolStripMenuItem.Text = "Settings";
@@ -88,7 +92,7 @@
             this.englishToolStripMenuItem1,
             this.russianToolStripMenuItem});
             this.languageToolStripMenuItem.Name = "languageToolStripMenuItem";
-            this.languageToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.languageToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.languageToolStripMenuItem.Text = "Language";
             // 
             // englishToolStripMenuItem
@@ -114,9 +118,23 @@
             // optionsToolStripMenuItem
             // 
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.optionsToolStripMenuItem.Text = "Options";
             this.optionsToolStripMenuItem.Click += new System.EventHandler(this.optionsToolStripMenuItem_Click);
+            // 
+            // enableVideoStreamToolStripMenuItem
+            // 
+            this.enableVideoStreamToolStripMenuItem.Name = "enableVideoStreamToolStripMenuItem";
+            this.enableVideoStreamToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.enableVideoStreamToolStripMenuItem.Text = "Enable Video Stream";
+            this.enableVideoStreamToolStripMenuItem.Click += new System.EventHandler(this.enableVideoStreamToolStripMenuItem_Click);
+            // 
+            // disableVideoStreamToolStripMenuItem
+            // 
+            this.disableVideoStreamToolStripMenuItem.Name = "disableVideoStreamToolStripMenuItem";
+            this.disableVideoStreamToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.disableVideoStreamToolStripMenuItem.Text = "Disable Video Stream";
+            this.disableVideoStreamToolStripMenuItem.Click += new System.EventHandler(this.disableVideoStreamToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
@@ -239,6 +257,7 @@
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-
+        public System.Windows.Forms.ToolStripMenuItem enableVideoStreamToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem disableVideoStreamToolStripMenuItem;
     }
 }

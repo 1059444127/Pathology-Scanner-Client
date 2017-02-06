@@ -46,7 +46,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(493, 135);
+            this.ClientSize = new System.Drawing.Size(489, 131);
             this.ControlBox = false;
             this.Controls.Add(this.label1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
@@ -54,8 +54,9 @@
             this.Name = "WritingToDbInfo";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.Text = "Writing to DataBase";
+            this.Text = "Please wait...";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.WritingToDbInfo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -18,6 +18,17 @@ namespace FirstGuiClient
         {
             LoadingPageThreadExecuted = false;
             InitializeComponent();
+
+            if (Controller.IsVideoStreamEnabled())
+            {
+                this.enableVideoStreamToolStripMenuItem.Enabled = false;
+                this.disableVideoStreamToolStripMenuItem.Enabled = true;
+            }
+            else
+            {
+                this.enableVideoStreamToolStripMenuItem.Enabled = true;
+                this.disableVideoStreamToolStripMenuItem.Enabled = false;
+            }
         }
 
         private void wizzardModeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -50,7 +61,7 @@ namespace FirstGuiClient
         {
             var LoadingPage = new NewScanInitialLoad();
             LoadingPage.Show();
-            
+
             Controller.InitializeScanPreview();
             LoadingPage.labelInitialLoad.Text = Controller.GetStatus();
             LoadingPage.Update();
@@ -67,12 +78,12 @@ namespace FirstGuiClient
                 LoadingPage.labelInitialLoad.Text = "Photo Successfully Received!";
             else
                 LoadingPage.labelInitialLoad.Text = "Some error occured!";
-            
+
             LoadingPage.Update();
             Thread.Sleep(2000);
-             
+
             LoadingPageThreadExecuted = true;
-            }
+        }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -95,6 +106,64 @@ namespace FirstGuiClient
         {
             Settings settings = new Settings();
             settings.Show();
+        }
+
+        private void enableVideoStreamToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var infoPage = new InfoForm();
+            infoPage.Text = "Pleas Wait...";
+            infoPage.label1.Text = "Starting Video Stream...";
+            infoPage.Show();
+            infoPage.Update();
+
+            this.enableVideoStreamToolStripMenuItem.Enabled = false;
+            this.disableVideoStreamToolStripMenuItem.Enabled = false;
+
+            if (Controller.EnableVideoStream())
+            {
+                this.enableVideoStreamToolStripMenuItem.Enabled = false;
+                this.disableVideoStreamToolStripMenuItem.Enabled = true;
+                infoPage.label1.Text += " SUCCESS!";
+            }
+            else
+            {
+                this.enableVideoStreamToolStripMenuItem.Enabled = true;
+                this.disableVideoStreamToolStripMenuItem.Enabled = false;
+                infoPage.label1.Text += " FAIL!";
+            }
+
+            infoPage.Update();
+            Thread.Sleep(2000);
+            infoPage.Close();
+        }
+
+        private void disableVideoStreamToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var infoPage = new InfoForm();
+            infoPage.Text = "Pleas Wait...";
+            infoPage.label1.Text = "Stoping Video Stream...";
+            infoPage.Show();
+            infoPage.Update();
+
+            this.enableVideoStreamToolStripMenuItem.Enabled = false;
+            this.disableVideoStreamToolStripMenuItem.Enabled = false;
+
+            if (Controller.StopVideoStream())
+            {
+                this.enableVideoStreamToolStripMenuItem.Enabled = true;
+                this.disableVideoStreamToolStripMenuItem.Enabled = false;
+                infoPage.label1.Text += " SUCCESS!";
+            }
+            else
+            {
+                this.enableVideoStreamToolStripMenuItem.Enabled = false;
+                this.disableVideoStreamToolStripMenuItem.Enabled = true;
+                infoPage.label1.Text += " FAIL!";
+            }
+
+            infoPage.Update();
+            Thread.Sleep(2000);
+            infoPage.Close();
         }
     }
 }

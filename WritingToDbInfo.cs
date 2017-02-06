@@ -25,5 +25,10 @@ namespace FirstGuiClient
         {
 
         }
+
+        private void WritingToDbInfo_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

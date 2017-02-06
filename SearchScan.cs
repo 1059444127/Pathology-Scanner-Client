@@ -22,6 +22,12 @@ namespace FirstGuiClient
         //[Search] button
         private void button1_Click(object sender, EventArgs e)
         {
+            //var infoPage = new WritingToDbInfo();
+            var infoPage = new InfoForm();
+            infoPage.label1.Text = "Searching from DB, Please wait...";
+            infoPage.Show();
+            infoPage.Update();
+
             try
             {
                 //listView1.ResetText();
@@ -67,6 +73,10 @@ namespace FirstGuiClient
             {
                 MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Application.ExitThread();
+            }
+            finally
+            {
+                infoPage.Close();
             }
 
             #region controller
@@ -150,6 +160,12 @@ namespace FirstGuiClient
         //[Show All] button
         private void buttonShowAll_Click(object sender, EventArgs e)
         {
+            //var infoPage = new WritingToDbInfo();
+            var infoPage = new InfoForm();
+            infoPage.label1.Text = "Searching from DB, Please wait...";
+            infoPage.Show();
+            infoPage.Update();
+
             try
             {
                 //listView1.Clear();
@@ -181,6 +197,10 @@ namespace FirstGuiClient
             {
                 MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Application.ExitThread();
+            }
+            finally
+            {
+                infoPage.Close();
             }
         }
 

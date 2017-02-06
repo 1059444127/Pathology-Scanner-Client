@@ -5,6 +5,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 using System.Xml;
 
@@ -12,14 +13,9 @@ namespace FirstGuiClient
 {
     public static class Controller
     {
-        //public enum StatusEnum
-        //{
-        //    NOT_STARTED,
-        //    INITIALIZING,
-        //    SCANNING,
-        //    SCAN_COMPLETE
-        //}
-        
+        private static bool VideoStreamEnabled = false;
+        private static String VideoStreamProcessId;
+
         private static String Status;
         private static String PreviousStatus;
 
@@ -32,6 +28,54 @@ namespace FirstGuiClient
         public static Image Image;
         private static Size ImageSize;
         private static Bitmap Bmp;
+
+        public static bool IsVideoStreamEnabled()
+        {
+            bool prevVideoStreamEnabled = Controller.VideoStreamEnabled;
+
+            new Thread(new ThreadStart(CheckVideoStreamEnabled)).Start();
+
+            return prevVideoStreamEnabled;
+        }
+
+        private static void CheckVideoStreamEnabled()
+        {
+            try
+            {
+                Controller.VideoStreamEnabled = bool.Parse(ExecuteRequest("getStreamStatus"));
+            }
+            catch { }
+        }
+
+        public static bool EnableVideoStream()
+        {
+            bool returnVal = false;
+            try
+            {
+                if (ExecuteRequest("startStream", imageResource: false) == "true")
+                    returnVal = true;
+            }
+            catch (Exception ex)
+            {
+                Controller.SetStatus("Failed to Enable Video Streaming");
+            }
+            return returnVal;
+        }
+
+        public static bool StopVideoStream()
+        {
+            bool returnVal = false;
+            try
+            {
+                if (ExecuteRequest("stopStream", imageResource: false) == "true")
+                    returnVal = true;
+            }
+            catch (Exception ex)
+            {
+                Controller.SetStatus("Failed to Disable Video Streaming");
+            }
+            return returnVal;
+        }
 
         public static void SetStatus(String value)
         {
@@ -48,11 +92,11 @@ namespace FirstGuiClient
         {
             return Status != PreviousStatus;
         }
-        
+
         public static void InitializeScanPreview()
         {
-            Controller.SetStatus("Connecting Server...");
-            
+            Controller.SetStatus("Initializing Rest Client...");
+
             ImagePath = string.Empty;
             HeightFactor = 1;
             WidthFactor = 1;
@@ -85,10 +129,18 @@ namespace FirstGuiClient
             if (innerContent == null || innerContent.Length < 4)
                 return null;
 
-            var responseByteArray = System.Convert.FromBase64String(innerContent);
-            Controller.Image = Image.FromStream(new MemoryStream(responseByteArray));
+            try
+            {
+                var responseByteArray = System.Convert.FromBase64String(innerContent);
+                Controller.Image = Image.FromStream(new MemoryStream(responseByteArray));
 
-            return Controller.Image;
+                return Controller.Image;
+            }
+            catch (Exception ex)
+            {
+                Controller.Image = null;
+                return null;
+            }
         }
 
         public static Image GetPreview()
@@ -104,28 +156,36 @@ namespace FirstGuiClient
             return Controller.Image;
         }
 
-        private static string ExecuteRequest(string resource)
+        private static string ExecuteRequest(string resource, bool imageResource = true)
         {
-            Configuration Config = new Configuration();
-
-            var client = new RestClient(string.Format("http://{0}:{1}", Config.Ip, Config.Port));
-            var request = new RestRequest(resource, Method.GET);
-            request.Timeout = 30000; //ms
-
-            IRestResponse response = client.Execute(request);
-
-            if (!response.ResponseStatus.Equals(ResponseStatus.Completed))
+            try
             {
-                Controller.ImageName = null;
+                Configuration Config = new Configuration();
+
+                var client = new RestClient(string.Format("http://{0}:{1}", Config.Ip, Config.Port));
+                var request = new RestRequest(resource, Method.GET);
+                request.Timeout = 30000; //ms
+
+                IRestResponse response = client.Execute(request);
+
+                if (!response.ResponseStatus.Equals(ResponseStatus.Completed))
+                {
+                    if (imageResource)
+                        Controller.ImageName = null;
+                    return null;
+                }
+
+                var xmlDoc = new XmlDocument();
+                xmlDoc.LoadXml(response.Content);
+
+                var innerContent = xmlDoc.DocumentElement.InnerText;
+
+                return innerContent;
+            }
+            catch (Exception ex)
+            {
                 return null;
             }
-
-            var xmlDoc = new XmlDocument();
-            xmlDoc.LoadXml(response.Content);
-
-            var innerContent = xmlDoc.DocumentElement.InnerText;
-
-            return innerContent;
         }
 
         public static PictureBox LoadScanPreview(PictureBox pictureBox1)
@@ -133,7 +193,7 @@ namespace FirstGuiClient
             if (Controller.ImageName == null || Controller.Image == null)
             {
                 ImagePath = "F:\\Test\\default.JPG";
-                
+
                 Image = null;
                 Image = Image.FromFile(ImagePath);
             }
@@ -141,7 +201,7 @@ namespace FirstGuiClient
             //try
             //{
             //Image = Image.FromFile(ImagePath);
-            ImageSize = new Size(WidthFactor * Image.Width/4, HeightFactor * Image.Height/4);
+            ImageSize = new Size(WidthFactor * Image.Width / 4, HeightFactor * Image.Height / 4);
 
             Bmp = new Bitmap(Image, ImageSize);
             //Image.Dispose();
@@ -181,25 +241,29 @@ namespace FirstGuiClient
             return image;
         }
 
-        public static bool SaveMetadataToDatabase(Metadata metadata)
+        public static bool SaveMetadataToDatabase(Metadata metadata, int attempts = 3)
         {
-            //try
-            //{
-            //var metadataContext = new MetadataContext();
-            var metadataContext = new Model1();
+            try
+            {
+                //var metadataContext = new MetadataContext();
+                var metadataContext = new Model1();
 
-            metadataContext.Database.CommandTimeout = 30; //seconds
+                metadataContext.Database.CommandTimeout = 30; //seconds
 
-            metadataContext.Scans.Add(metadata);
-            metadataContext.SaveChanges();
+                metadataContext.Scans.Add(metadata);
+                metadataContext.SaveChanges();
 
-            return true;
-            //}
-            //catch (Exception ex)
-            //{
-            //    Console.WriteLine(ex.Message);
-            //    return false; //testing
-            //}
+                return true;
+            }
+            catch (Exception ex)
+            {
+                //Console.WriteLine(ex.Message);
+
+                if (attempts > 0)
+                    return SaveMetadataToDatabase(metadata, attempts--);
+
+                return false; //testing
+            }
         }
 
         public static void SaveMetadataToFolder(Metadata metadata)
@@ -209,14 +273,14 @@ namespace FirstGuiClient
             String imagePathName = dirPathName + "\\image.jpg";
             String textPathName = dirPathName + "\\info.txt";
             var textContent = new StringBuilder();
-            
+
             Directory.CreateDirectory(dirPathName);
 
             Image image = Image.FromStream(new MemoryStream(metadata.Image));
             image.Save(imagePathName);
-            
+
             textContent.Append("ScanId= " + metadata.ScanId).Append(Environment.NewLine);
-            textContent.Append("Date Created= " + Controller.ConvertScanIdToPseudoTime(metadata.ScanId)).Append(Environment.NewLine);
+            textContent.Append("Date Created= " + Controller.ConvertScanIdToPseudoTime(metadata.ScanId)).AppendLine(" (Year-Month-Date Hour:Minute:Second)");
             textContent.Append("-------------------").Append(Environment.NewLine);
             textContent.Append("Patient Name= " + metadata.PatientName).Append(Environment.NewLine);
             textContent.Append("Patient Surname= " + metadata.PatientSurname).Append(Environment.NewLine);
@@ -232,7 +296,7 @@ namespace FirstGuiClient
 
             File.AppendAllText(textPathName, textContent.ToString());
         }
-    
+
         private static String VersionizeDirectoryPathName(String dirPathName)
         {
             if (Directory.Exists(dirPathName))
